@@ -1,6 +1,6 @@
 # ScroogeCoin
 
-This breanch contais the last copy of GoofyCoin project which is based for.
+This branch contais the last copy of GoofyCoin project which is based for.
 
 Improving Googy coin - Fixing double spend attack, enabling persons to slpit coins, removing coin class
 
