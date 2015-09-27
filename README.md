@@ -15,7 +15,7 @@ has the ID of a transaction, the transaction’s contents, and a hash pointer to t
 Scrooge digitally signs the final hash pointer, which represents this entire structure, and publishes the
 signature along with the block chain.
 
-[Alt text](https://github.com/vinils/ScroogeCoin/blob/master/Figure111.jpg "Figure 1.11")
+![Alt text](https://github.com/vinils/ScroogeCoin/blob/master/Figure111.jpg "Figure 1.11")
 
 
 Figure 1.11 ScroogeCoin block chain.
