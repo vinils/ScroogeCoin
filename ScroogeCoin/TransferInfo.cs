@@ -25,12 +25,7 @@ namespace ScroogeCoin
             this.destinyPk = destinyPk;
         }
 
-        protected virtual Boolean isValidSignedMsg(TransferHashed previous)
-        {
-            return previousTransSignedByMe.isValidSignedMsg(previous);
-        }
-
-        protected virtual Boolean isSignerPreviousTransactoin(byte[] ownerPk)
+        public virtual Boolean isSignerPreviousTransactoin(byte[] ownerPk)
         {
             return previousTransSignedByMe.PublicKey == ownerPk;
         }
