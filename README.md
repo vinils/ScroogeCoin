@@ -1,6 +1,6 @@
 # ScroogeCoin
 
-This breanch contais the last copy of GoofyCoin project which is based for.
+the goofy coin use to have the signature of the previous transfer. Now with a Scrooge as a cental authority, thats not necessary any more because transfers will be signed by Scrooge.
 
 Improving Googy coin - Fixing double spend attack, enabling persons to slpit coins, removing coin class
 
