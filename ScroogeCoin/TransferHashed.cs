@@ -64,7 +64,7 @@ namespace ScroogeCoin
 
         public virtual Boolean isSignerPreviousTransactoin(byte[] ownerPk)
         {
-            return info.PreviousTransSignedByMe.PublicKey == ownerPk;
+            return info.isSignerPreviousTransactoin(ownerPk);
         }
 
         public virtual void CheckTransfer()
