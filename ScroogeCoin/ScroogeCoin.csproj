@@ -52,6 +52,7 @@
     <Compile Include="Signature.cs" />
     <Compile Include="SignedMessage.cs" />
     <Compile Include="Tests.cs" />
+    <Compile Include="TransferSignature.cs" />
     <Compile Include="TransferHashed.cs" />
     <Compile Include="TransferInfo.cs" />
     <Compile Include="TransferInfoCreateCoin.cs" />

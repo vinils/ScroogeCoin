@@ -18,7 +18,6 @@ namespace ScroogeCoin
             alice.AddTransfer(goofyTrans);
             var aliceTrans = alice.PayTo(bob.PublicKey);
 
-
             //bob Transfer
             bob.AddTransfer(aliceTrans);
             var bobTrans = bob.PayTo(clark.PublicKey);

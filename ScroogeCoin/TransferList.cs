@@ -19,10 +19,9 @@ namespace ScroogeCoin
             this.previous = previous;
         }
 
-        protected TransferList(TransferList previous, TransferInfo trans)
-            : base(trans)
+        protected TransferList(TransferList previous, TransferInfo transInfo)
+            : this(previous, new TransferHashed(transInfo))
         {
-            this.previous = previous;
         }
 
         public TransferList Payto(TransferInfo trans)
