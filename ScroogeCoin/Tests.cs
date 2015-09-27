@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GoofyCoin2015
+namespace ScroogeCoin
 {
     public static class Tests
     {

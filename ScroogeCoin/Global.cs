@@ -3,7 +3,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.Cryptography;
 
-namespace GoofyCoin2015
+namespace ScroogeCoin
 {
     public static class Global
     {

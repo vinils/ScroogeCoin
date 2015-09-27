@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Security.Cryptography;
 
-namespace GoofyCoin2015
+namespace ScroogeCoin
 {
     [Serializable()]
     public class SignedMessage

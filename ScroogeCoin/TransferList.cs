@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace GoofyCoin2015
+namespace ScroogeCoin
 {
     public class TransferList : TransferHashed, IEnumerable<TransferList>
     {

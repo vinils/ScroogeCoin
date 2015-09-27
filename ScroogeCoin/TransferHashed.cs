@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Security.Cryptography;
 
-namespace GoofyCoin2015
+namespace ScroogeCoin
 {
     public class TransferHashed
     {

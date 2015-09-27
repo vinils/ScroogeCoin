@@ -43,18 +43,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Coin.cs" />
     <Compile Include="Counter.cs" />
     <Compile Include="Global.cs" />
     <Compile Include="Goofy.cs" />
-    <Compile Include="GoofyTransaction.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Signature.cs" />
     <Compile Include="SignedMessage.cs" />
     <Compile Include="Tests.cs" />
-    <Compile Include="Transaction.cs" />
+    <Compile Include="TransferHashed.cs" />
+    <Compile Include="TransferInfo.cs" />
+    <Compile Include="TransferInfoCreateCoin.cs" />
+    <Compile Include="TransferList.cs" />
+    <Compile Include="TransferListCreateCoin.cs" />
+    <Compile Include="Transfers.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

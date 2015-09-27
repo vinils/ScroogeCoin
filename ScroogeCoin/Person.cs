@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace GoofyCoin2015
+namespace ScroogeCoin
 {
     public class Person
     {

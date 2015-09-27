@@ -1,4 +1,4 @@
-﻿namespace GoofyCoin2015
+﻿namespace ScroogeCoin
 {
     public class Goofy : Person
     {
