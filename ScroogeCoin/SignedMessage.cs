@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Security.Cryptography;
 
-namespace ScroogeCoin
+namespace GoofyCoin2015
 {
     [Serializable()]
     public class SignedMessage
@@ -21,35 +21,25 @@ namespace ScroogeCoin
             private set { sgndMsg = value; }
         }
 
-        public SignedMessage(Signature mySignature, byte[] signedMsg)
+        public SignedMessage(byte[] publicKey, byte[] signedMsg)
         {
-            PublicKey = mySignature.PublicKey;
+            PublicKey = publicKey;
             SignedMsg = signedMsg;
         }
 
-        public Boolean isValidSignedMsg(Coin message)
+        public Boolean isValidSignedMsg(TransferHashed message)
         {
-            return isValidSignedMsg((Object)message);
+            return isValidSignedMsg(message.Hash);
         }
 
-        public Boolean isValidSignedMsg(Transaction message)
-        {
-            return isValidSignedMsg((Object)message);
-        }
-
-        private Boolean isValidSignedMsg(Object obj)
+        private Boolean isValidSignedMsg(byte[] hash)
         {
             Boolean bReturn;
-
-            var bObj = Global.ConvertObjetToArrayByte(obj);
 
             using (var dsa = new ECDsaCng(CngKey.Import(PublicKey, CngKeyBlobFormat.EccPublicBlob)))
             {
                 dsa.HashAlgorithm = Global.HashAlgorithm;
-
-                // verifying hashed message
-                //bReturn = dsa.VerifyHash(dataHash, SignedMsg);
-                bReturn = dsa.VerifyData(bObj, SignedMsg);
+                bReturn = dsa.VerifyData(hash, SignedMsg);
             }
 
             return bReturn;

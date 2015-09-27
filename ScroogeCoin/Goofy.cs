@@ -1,4 +1,4 @@
-﻿namespace ScroogeCoin
+﻿namespace GoofyCoin2015
 {
     public class Goofy : Person
     {
@@ -8,10 +8,12 @@
         }
 
 
-        public GoofyTransaction CreateCoin(byte[] ownerPk)
+        public Transfers CreateCoin(byte[] ownerPk)
         {
-            var goofyCoin = new Coin(mySignature);
-            return new GoofyTransaction(goofyCoin, ownerPk);
+            var goofyTransInfo = new TransferInfoCreateCoin(ownerPk, Counter.Coin);
+            var transHashed =  new TransferHashed(goofyTransInfo);
+            var goofyList = new TransferListCreateCoin(transHashed);
+            return new Transfers(transHashed, goofyList);
         }
     }
 }

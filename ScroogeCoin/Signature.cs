@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Security.Cryptography;
 
-namespace ScroogeCoin
+namespace GoofyCoin2015
 {
     public class Signature
     {
@@ -21,26 +21,16 @@ namespace ScroogeCoin
             PublicKey = dsa.Key.Export(CngKeyBlobFormat.EccPublicBlob);
         }
 
-        public SignedMessage SignMessage(Coin coin)
+        public SignedMessage SignMessage(TransferHashed transfer)
         {
-            return SignMessage((Object) coin);
+            return SignMessage(transfer.Hash);
         }
 
-        public SignedMessage SignMessage(Transaction transaction)
+        private SignedMessage SignMessage(byte[] hash)
         {
-            return SignMessage((Object) transaction);
-        }
+            var sgndData = dsa.SignData(hash);
 
-        private SignedMessage SignMessage(Object obj)
-        {
-            var bObj = Global.ConvertObjetToArrayByte(obj);
-
-            // signing hash data
-            //var msgHashed = new SHA1Managed().ComputeHash(message);
-            //var sgndData = dsa.SignHash(msgHashed); 
-
-            var sgndData = dsa.SignData(bObj);
-            return new SignedMessage(this, sgndData);
+            return new SignedMessage(publicKey, sgndData);
         }
     }
 }

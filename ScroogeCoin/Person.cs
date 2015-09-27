@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace ScroogeCoin
+namespace GoofyCoin2015
 {
     public class Person
     {
         private static readonly int sizeKey = 256;
-        private List<Transaction> wallet = new List<Transaction>();
+        private List<Transfers> wallet = new List<Transfers>();
         protected Signature mySignature = new Signature(sizeKey);
 
         public byte[] PublicKey
@@ -18,28 +18,26 @@ namespace ScroogeCoin
         {
         }
 
-        public void AddTransaction(Transaction trans)
+        public void AddTransfer(Transfers trans)
         {
-            CheckTransaction(trans);
+            CheckTransfers(trans);
             wallet.Add(trans);
         }
 
-        public Transaction PayTo(byte[] publicKey)
+        public Transfers PayTo(byte[] publicKey)
         {
             var trans = wallet.Last();
             var sgndTrans = mySignature.SignMessage(trans);
-            var paidTransaction = trans.Payto(sgndTrans, publicKey);
+            var transInfo = new TransferInfo(sgndTrans, publicKey);
+            var paidTransfer = trans.PayTo(transInfo);
             wallet.Remove(trans);
 
-            return paidTransaction;
+            return paidTransfer;
         }
 
-        private void CheckTransaction(Transaction transaction)
+        public virtual void CheckTransfers(Transfers trans)
         {
-            foreach(var trans in transaction)
-            {
-                trans.CheckTransaction();
-            }
+            trans.CheckTransfers();
         }
     }
 }

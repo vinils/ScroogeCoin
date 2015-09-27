@@ -3,7 +3,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.Cryptography;
 
-namespace ScroogeCoin
+namespace GoofyCoin2015
 {
     public static class Global
     {
@@ -13,14 +13,12 @@ namespace ScroogeCoin
         public static byte[] ConvertObjetToArrayByte(Object obj)
         {
             byte[] bObj;
-            BinaryFormatter bf = new BinaryFormatter();
             using (MemoryStream ms = new MemoryStream())
             {
+                BinaryFormatter bf = new BinaryFormatter();
                 bf.Serialize(ms, obj);
                 bObj = ms.ToArray();
             }
-
-            var test = ConvertArrayByteToObjet(bObj);
 
             return bObj;
         }
